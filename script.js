@@ -19,7 +19,7 @@ document.querySelector(".again").addEventListener("click", function () {
 });
 
 document.querySelector(".check").addEventListener("click", function () {
-  if (guess !== secretNumber && score > 0) {
+  if (guess !== secretNumber && score >= 0) {
     guess = Number(document.querySelector(".guess").value);
 
     if (!guess) {
@@ -34,6 +34,7 @@ document.querySelector(".check").addEventListener("click", function () {
       if (score <= 0) {
         document.querySelector(".score").textContent = 0;
         document.querySelector(".message").textContent = "You lost 😭";
+        document.querySelector("body").style.backgroundColor = "#DC143C";
       } else {
         score--;
         document.querySelector(".score").textContent = score;
